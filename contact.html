@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="MyWebStyles.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="Bimala.html" class="logo">Portfolio.</a>
+        <nav class="navbar">
+            <a href="Bimala.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="certificates.html">Certificates</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section id="contacts" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="button">
+                    <a href="#submit">Submit</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            
+            form.addEventListener('submit', function(e) {
+                // Get the values from the form fields
+                let name = document.getElementById('name').value;
+                let email = document.getElementById('email').value;
+                let message = document.getElementById('message').value;
+                
+                console.log('Form submitted');
+                console.log('Name:', name, 'Email:', email, 'Message:', message);
+                
+                // Check if any field is empty
+                if (name === '' || email === '' || message === '') {
+                    alert('Please fill in all fields.');
+                    e.preventDefault(); // Prevent form submission
+                }
+
+                // Simple email format validation (optional)
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    e.preventDefault(); // Prevent form submission
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
