@@ -336,9 +336,9 @@ body {
 }
 
 .about-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 170px;
+    height: 220px;
+    border-radius: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
